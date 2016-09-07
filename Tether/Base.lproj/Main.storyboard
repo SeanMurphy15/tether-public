@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Xl-8g-cQY">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="e2y-Bs-yzq">
+            <objects>
+                <viewController id="EAh-ps-vcg" customClass="MapViewController" customModule="Tether" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Dv-Li-Vkc"/>
+                        <viewControllerLayoutGuide type="bottom" id="JxM-lr-QUv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fhc-vE-HgE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="64w-nZ-RMY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ede-xG-0bF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="EAh-ps-vcg" id="5WF-Am-fSX"/>
+                                        </connections>
+                                    </mapView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hg5-Yg-KwP">
+                                        <rect key="frame" x="0.0" y="367" width="375" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="2g9-6m-toD"/>
+                                            <constraint firstAttribute="height" constant="35" id="yz3-A7-eVy"/>
+                                        </constraints>
+                                        <items>
+                                            <barButtonItem image="Add Tether" id="ING-VL-XIh">
+                                                <connections>
+                                                    <action selector="addNewTetherTapped:" destination="EAh-ps-vcg" id="tyg-Fg-fVM"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="9fs-Ux-ay5"/>
+                                            <barButtonItem image="Magnifying glass" id="fiC-Uw-8Mz">
+                                                <connections>
+                                                    <action selector="zoomOutButtonTapped:" destination="EAh-ps-vcg" id="hPe-8u-MlB"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem width="5" style="plain" systemItem="fixedSpace" id="QXs-Kh-Ljc"/>
+                                            <barButtonItem image="Satellite" id="pzu-yh-ekX">
+                                                <connections>
+                                                    <action selector="mapTypeButtonTapped:" destination="EAh-ps-vcg" id="3xW-GD-SXI"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="26" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eo6-Pu-vnS">
+                                        <rect key="frame" x="0.0" y="402" width="375" height="201"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="RequestSentCell" rowHeight="61" id="os3-QD-6Pw" customClass="RequestSentCell" customModule="Tether" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="os3-QD-6Pw" id="ij1-gl-hMz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qbs-dc-jRP">
+                                                            <rect key="frame" x="8" y="8" width="359" height="50"/>
+                                                            <subviews>
+                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fz4-HB-QVN">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="ZwQ-Nj-wdD"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="liX-FM-OuW"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="25"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ph9-92-O0k">
+                                                                    <rect key="frame" x="60" y="0.0" width="224" height="50"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="QTH-bD-XD9">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="224" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" text="Pending response from friend" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="c38-pq-If4">
+                                                                            <rect key="frame" x="0.0" y="21" width="224" height="30"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="ShR-aY-Msc">
+                                                                    <rect key="frame" x="294" y="0.0" width="65" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="65" id="jU5-jF-NzQ"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Cancel">
+                                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="cancelButtonTapped:" destination="os3-QD-6Pw" eventType="touchUpInside" id="M8T-me-8Uc"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="skU-4O-Hh0"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="skU-4O-Hh0"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="qbs-dc-jRP" firstAttribute="top" secondItem="ij1-gl-hMz" secondAttribute="topMargin" id="971-FG-KNx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qbs-dc-jRP" secondAttribute="bottom" id="A63-dT-HAU"/>
+                                                        <constraint firstItem="qbs-dc-jRP" firstAttribute="leading" secondItem="ij1-gl-hMz" secondAttribute="leadingMargin" id="BEx-H2-hzK"/>
+                                                        <constraint firstItem="qbs-dc-jRP" firstAttribute="top" secondItem="ij1-gl-hMz" secondAttribute="topMargin" constant="-8" id="Pd9-Gd-gjw"/>
+                                                        <constraint firstItem="qbs-dc-jRP" firstAttribute="top" secondItem="ij1-gl-hMz" secondAttribute="top" id="UPw-2A-NAu"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="qbs-dc-jRP" secondAttribute="bottom" constant="-8" id="Yja-Dz-iiR"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="qbs-dc-jRP" secondAttribute="trailing" id="oFQ-xc-51k"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="A63-dT-HAU"/>
+                                                            <exclude reference="Pd9-Gd-gjw"/>
+                                                            <exclude reference="UPw-2A-NAu"/>
+                                                            <exclude reference="Yja-Dz-iiR"/>
+                                                        </mask>
+                                                    </variation>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="cancelButton" destination="ShR-aY-Msc" id="grD-lu-FC1"/>
+                                                    <outlet property="friendImage" destination="Fz4-HB-QVN" id="eRZ-Kx-cEc"/>
+                                                    <outlet property="nameLabel" destination="QTH-bD-XD9" id="bmY-f7-dox"/>
+                                                    <outlet property="requestLabel" destination="c38-pq-If4" id="zit-Wn-o3k"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RequestsReceivedCell" rowHeight="64" id="ctT-x7-lLd" customClass="RequestsReceivedCell" customModule="Tether" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="89" width="375" height="64"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ctT-x7-lLd" id="IC9-bm-TcY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QWo-aW-Zqp">
+                                                            <rect key="frame" x="8" y="8" width="359" height="50"/>
+                                                            <subviews>
+                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2o-RQ-e1z">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="Eso-xw-3ue"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="NR0-O5-xBP"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="25"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r5q-p1-bk8">
+                                                                    <rect key="frame" x="60" y="0.0" width="224" height="50"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="j1u-pn-nrh">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="224" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" text="Would you like to tether to friend?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="AxH-9S-cW1">
+                                                                            <rect key="frame" x="0.0" y="21" width="224" height="30"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="inZ-kl-4OE">
+                                                                    <rect key="frame" x="294" y="0.0" width="65" height="50"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-n0-jnX">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="65" height="25"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="65" id="DVz-Yd-2en"/>
+                                                                            </constraints>
+                                                                            <state key="normal" title="Accept"/>
+                                                                            <connections>
+                                                                                <action selector="acceptButtonTapped:" destination="ctT-x7-lLd" eventType="touchUpInside" id="0Vr-UN-Zo7"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvw-D4-918">
+                                                                            <rect key="frame" x="0.0" y="25" width="65" height="25"/>
+                                                                            <state key="normal" title="Reject"/>
+                                                                            <connections>
+                                                                                <action selector="rejectButtonTapped:" destination="ctT-x7-lLd" eventType="touchUpInside" id="64s-A8-Ggq"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="mUS-gY-4Ep"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="mUS-gY-4Ep"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="QWo-aW-Zqp" firstAttribute="top" secondItem="IC9-bm-TcY" secondAttribute="top" id="4ex-BG-fph"/>
+                                                        <constraint firstItem="QWo-aW-Zqp" firstAttribute="leading" secondItem="IC9-bm-TcY" secondAttribute="leadingMargin" id="6r1-N0-zEW"/>
+                                                        <constraint firstItem="QWo-aW-Zqp" firstAttribute="top" secondItem="IC9-bm-TcY" secondAttribute="topMargin" id="GOj-fl-Kyx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="QWo-aW-Zqp" secondAttribute="bottom" id="LzF-9p-0Zt"/>
+                                                        <constraint firstItem="QWo-aW-Zqp" firstAttribute="trailing" secondItem="IC9-bm-TcY" secondAttribute="trailingMargin" id="hNn-mh-j6Y"/>
+                                                        <constraint firstItem="QWo-aW-Zqp" firstAttribute="top" secondItem="IC9-bm-TcY" secondAttribute="topMargin" id="xMV-Kh-5lh"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="4ex-BG-fph"/>
+                                                            <exclude reference="LzF-9p-0Zt"/>
+                                                            <exclude reference="xMV-Kh-5lh"/>
+                                                        </mask>
+                                                    </variation>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="acceptButton" destination="IKf-n0-jnX" id="SLH-Jl-Nqr"/>
+                                                    <outlet property="friendImage" destination="v2o-RQ-e1z" id="v09-us-dWZ"/>
+                                                    <outlet property="nameLabel" destination="j1u-pn-nrh" id="Drf-9w-GHF"/>
+                                                    <outlet property="rejectButton" destination="pvw-D4-918" id="1DE-WH-bEm"/>
+                                                    <outlet property="requestLabel" destination="AxH-9S-cW1" id="Dpx-qO-Kp9"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TetherCell" rowHeight="50" id="Ek0-HI-584" customClass="TetherCell" customModule="Tether" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="153" width="375" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ek0-HI-584" id="SDk-y8-nXa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cti-I5-gt4">
+                                                            <rect key="frame" x="8" y="8" width="359" height="50"/>
+                                                            <subviews>
+                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVB-8W-sjr">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="HBG-bh-354"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="f5X-rL-3ov"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                            <integer key="value" value="25"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u4H-zz-iim">
+                                                                    <rect key="frame" x="60" y="0.0" width="217" height="50"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="uPJ-VU-Yih">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="217" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" text="Currently tethered to friend" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5ou-tI-ww6">
+                                                                            <rect key="frame" x="0.0" y="21" width="217" height="30"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="PwZ-wh-eZH">
+                                                                    <rect key="frame" x="287" y="0.0" width="72" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="65" id="lxo-9o-QEr"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Untether">
+                                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    </state>
+                                                                    <variation key="default">
+                                                                        <mask key="constraints">
+                                                                            <exclude reference="lxo-9o-QEr"/>
+                                                                        </mask>
+                                                                    </variation>
+                                                                    <connections>
+                                                                        <action selector="untetherButtonTapped:" destination="Ek0-HI-584" eventType="touchUpInside" id="68V-5f-Zhp"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="gnr-MU-YUL"/>
+                                                            </constraints>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="gnr-MU-YUL"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="cti-I5-gt4" secondAttribute="bottom" id="2Q7-BZ-0MY"/>
+                                                        <constraint firstItem="cti-I5-gt4" firstAttribute="trailing" secondItem="SDk-y8-nXa" secondAttribute="trailingMargin" id="ECM-ai-623"/>
+                                                        <constraint firstItem="cti-I5-gt4" firstAttribute="top" secondItem="SDk-y8-nXa" secondAttribute="top" id="EbJ-8y-82G"/>
+                                                        <constraint firstItem="cti-I5-gt4" firstAttribute="leading" secondItem="SDk-y8-nXa" secondAttribute="leadingMargin" id="IZE-9F-yFr"/>
+                                                        <constraint firstItem="cti-I5-gt4" firstAttribute="top" secondItem="SDk-y8-nXa" secondAttribute="topMargin" id="SkG-oy-Seu"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="2Q7-BZ-0MY"/>
+                                                            <exclude reference="EbJ-8y-82G"/>
+                                                        </mask>
+                                                    </variation>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="friendImage" destination="pVB-8W-sjr" id="IZN-FS-jMs"/>
+                                                    <outlet property="nameLabel" destination="uPJ-VU-Yih" id="mPN-q9-C3I"/>
+                                                    <outlet property="tetherLabel" destination="5ou-tI-ww6" id="vsi-cu-eZY"/>
+                                                    <outlet property="untetherButton" destination="PwZ-wh-eZH" id="u3Q-Ya-Kx6"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="EAh-ps-vcg" id="0Zo-Of-IoR"/>
+                                            <outlet property="delegate" destination="EAh-ps-vcg" id="UjB-Yb-x9Z"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eo6-Pu-vnS" firstAttribute="height" secondItem="64w-nZ-RMY" secondAttribute="height" multiplier="1/3" id="iUr-oS-jgL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="64w-nZ-RMY" firstAttribute="top" secondItem="2Dv-Li-Vkc" secondAttribute="bottom" id="3Sa-jW-5jE"/>
+                            <constraint firstAttribute="trailing" secondItem="64w-nZ-RMY" secondAttribute="trailing" id="D5p-Rn-8Jw"/>
+                            <constraint firstItem="64w-nZ-RMY" firstAttribute="leading" secondItem="Fhc-vE-HgE" secondAttribute="leading" id="LF8-WS-FgQ"/>
+                            <constraint firstAttribute="bottom" secondItem="64w-nZ-RMY" secondAttribute="bottom" id="mje-Ac-Gzg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zln-ZM-NBU">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="cwY-yH-GCx">
+                            <view key="customView" contentMode="scaleToFill" id="6Zj-F3-giV">
+                                <rect key="frame" x="16" y="5" width="134" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0s-B3-D4d">
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="33"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="999" image="Tether icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ace-Md-QoO">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="BFu-f8-w83"/>
+                                                    <constraint firstAttribute="width" constant="33" id="dKV-mX-aNk"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="bYM-9r-Lf0" appends="YES" id="FqO-9A-CR6"/>
+                                                </connections>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Tether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry9-TD-c7w">
+                                                <rect key="frame" x="33" y="0.0" width="101" height="33"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="m0s-B3-D4d" secondAttribute="trailing" id="D9G-Wo-zKj"/>
+                                    <constraint firstItem="m0s-B3-D4d" firstAttribute="top" secondItem="6Zj-F3-giV" secondAttribute="top" id="Ncq-Iy-Wwq"/>
+                                    <constraint firstAttribute="bottom" secondItem="m0s-B3-D4d" secondAttribute="bottom" id="a5C-Cq-pTK"/>
+                                    <constraint firstItem="m0s-B3-D4d" firstAttribute="leading" secondItem="6Zj-F3-giV" secondAttribute="leading" id="c72-YZ-LlE"/>
+                                </constraints>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addTetherButton" destination="ING-VL-XIh" id="dkO-H4-NVW"/>
+                        <outlet property="mapTypeButton" destination="pzu-yh-ekX" id="Tjw-8H-5D4"/>
+                        <outlet property="mapView" destination="ede-xG-0bF" id="C0f-yd-8Uc"/>
+                        <outlet property="tableView" destination="eo6-Pu-vnS" id="9Pc-Ma-5VK"/>
+                        <outlet property="toolbar" destination="Hg5-Yg-KwP" id="BJb-U9-StU"/>
+                        <segue destination="K7L-n9-H7k" kind="presentation" identifier="toContactTableView" id="Fm2-K6-ZFi"/>
+                        <segue destination="f4K-MV-dFb" kind="show" identifier="toCompassView" id="9MK-M4-Z1A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDl-ww-h6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="sz4-LE-F2E">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Are-0w-NFY">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <state key="normal" title="Button" image="location-icon"/>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-UR-nEi">
+                            <rect key="frame" x="6" y="0.0" width="38" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Gxl-UR-nEi" secondAttribute="height" multiplier="1:1" id="3NY-F6-ofE"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="19"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Are-0w-NFY" firstAttribute="leading" secondItem="sz4-LE-F2E" secondAttribute="leading" id="6eh-ol-9Sc"/>
+                        <constraint firstAttribute="trailing" secondItem="Are-0w-NFY" secondAttribute="trailing" id="AXw-UB-sMb"/>
+                        <constraint firstAttribute="bottom" secondItem="Gxl-UR-nEi" secondAttribute="bottom" constant="14" id="IAE-fd-FwJ"/>
+                        <constraint firstAttribute="bottom" secondItem="Are-0w-NFY" secondAttribute="bottom" id="WRA-5t-KHk"/>
+                        <constraint firstItem="Are-0w-NFY" firstAttribute="top" secondItem="sz4-LE-F2E" secondAttribute="top" id="f6t-bs-j4W"/>
+                        <constraint firstAttribute="trailing" secondItem="Gxl-UR-nEi" secondAttribute="trailing" constant="6" id="m42-tC-scu"/>
+                        <constraint firstItem="Gxl-UR-nEi" firstAttribute="leading" secondItem="sz4-LE-F2E" secondAttribute="leading" constant="6" id="t6Q-AO-KRl"/>
+                        <constraint firstItem="Gxl-UR-nEi" firstAttribute="top" secondItem="sz4-LE-F2E" secondAttribute="top" id="yxD-vE-3t9"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="IAE-fd-FwJ"/>
+                        </mask>
+                    </variation>
+                </view>
+                <tapGestureRecognizer id="bYM-9r-Lf0">
+                    <connections>
+                        <outlet property="delegate" destination="EAh-ps-vcg" id="lTy-Pc-MXS"/>
+                        <segue destination="6F4-kz-dgF" kind="presentation" identifier="toAppInfo" id="B5Y-Mi-FJA"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3588.5" y="353.5"/>
+        </scene>
+        <!--Search Results Table View Controller-->
+        <scene sceneID="Gyx-gF-LhI">
+            <objects>
+                <tableViewController storyboardIdentifier="searchResults" id="mR0-Zj-yC4" customClass="SearchResultsTableViewController" customModule="Tether" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="X6u-uT-wMD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" rowHeight="62" id="Pl4-Kl-2Mf" customClass="ContactCell" customModule="Tether" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="62"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pl4-Kl-2Mf" id="weA-A2-gd5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="87g-Pq-rXK">
+                                            <rect key="frame" x="8" y="8" width="359" height="50"/>
+                                            <subviews>
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYy-rf-eCW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="icS-xk-GVi"/>
+                                                        <constraint firstAttribute="height" constant="50" id="sBr-Vo-E4w"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="UgJ-Dm-QQ7">
+                                                    <rect key="frame" x="60" y="0.0" width="224" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOT-EN-ppA">
+                                                            <rect key="frame" x="0.0" y="0.0" width="224" height="25"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PtD-SP-RDr">
+                                                            <rect key="frame" x="0.0" y="25" width="224" height="25"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vFV-yl-9cI">
+                                                    <rect key="frame" x="294" y="0.0" width="65" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="JBa-8o-XSd"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="Request Tether">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="requestButtonTapped:" destination="Pl4-Kl-2Mf" eventType="touchUpInside" id="W5t-LH-sFm"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="HSa-r1-TaK"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="87g-Pq-rXK" firstAttribute="top" secondItem="weA-A2-gd5" secondAttribute="top" constant="8" id="Isl-B3-ehj"/>
+                                        <constraint firstAttribute="trailing" secondItem="87g-Pq-rXK" secondAttribute="trailing" constant="8" id="dy1-Yc-c4A"/>
+                                        <constraint firstItem="87g-Pq-rXK" firstAttribute="leading" secondItem="weA-A2-gd5" secondAttribute="leading" constant="8" id="xD8-cC-bs9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fullNameLabel" destination="eOT-EN-ppA" id="8S5-Ll-IqA"/>
+                                    <outlet property="imageContact" destination="vYy-rf-eCW" id="2Ih-xr-ig2"/>
+                                    <outlet property="phoneNumberLabel" destination="PtD-SP-RDr" id="ya2-bw-hWx"/>
+                                    <outlet property="requestButton" destination="vFV-yl-9cI" id="hnC-9j-Qr1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mR0-Zj-yC4" id="hZo-ZZ-0lw"/>
+                            <outlet property="delegate" destination="mR0-Zj-yC4" id="TpL-XL-BR6"/>
+                        </connections>
+                    </tableView>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pJh-uq-UhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5282.5" y="353.5"/>
+        </scene>
+        <!--Contacts Table View Controller-->
+        <scene sceneID="kzy-oU-Cpu">
+            <objects>
+                <tableViewController id="HnB-O3-SAF" customClass="ContactsTableViewController" customModule="Tether" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="6M4-2x-HgZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" rowHeight="62" id="2S7-a5-4yZ" customClass="ContactCell" customModule="Tether" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="62"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2S7-a5-4yZ" id="aDb-74-jer">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gc0-ab-yEN">
+                                            <rect key="frame" x="8" y="8" width="359" height="50"/>
+                                            <subviews>
+                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" horizontalCompressionResistancePriority="759" verticalCompressionResistancePriority="759" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRI-IU-9ST">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="KLL-Un-bsz"/>
+                                                        <constraint firstAttribute="width" constant="50" id="OCt-UF-RDc"/>
+                                                    </constraints>
+                                                    <state key="normal">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gzE-6C-Ebc">
+                                                    <rect key="frame" x="60" y="0.0" width="224" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vP-lI-peY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="224" height="25"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhoneNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9Q-rh-HeO">
+                                                            <rect key="frame" x="0.0" y="25" width="224" height="25"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GgJ-5m-Bs2">
+                                                    <rect key="frame" x="294" y="0.0" width="65" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="NKr-mz-JpO"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="Request Tether">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" red="0.085678681810000004" green="0.12816635630000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="requestButtonTapped:" destination="2S7-a5-4yZ" eventType="touchUpInside" id="0oD-Je-Zjw"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="ypO-wz-JQj"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gc0-ab-yEN" firstAttribute="leading" secondItem="aDb-74-jer" secondAttribute="leading" constant="8" id="5RM-Dx-f4E"/>
+                                        <constraint firstItem="gc0-ab-yEN" firstAttribute="top" secondItem="aDb-74-jer" secondAttribute="top" constant="8" id="da7-qi-NgE"/>
+                                        <constraint firstAttribute="trailing" secondItem="gc0-ab-yEN" secondAttribute="trailing" constant="8" id="hPJ-Lv-UF1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fullNameLabel" destination="9vP-lI-peY" id="BDa-Wg-gVW"/>
+                                    <outlet property="imageContact" destination="kRI-IU-9ST" id="wfl-6s-Aq2"/>
+                                    <outlet property="phoneNumberLabel" destination="T9Q-rh-HeO" id="eC5-YB-h6o"/>
+                                    <outlet property="requestButton" destination="GgJ-5m-Bs2" id="DDf-ts-6LX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HnB-O3-SAF" id="vzL-LS-0zl"/>
+                            <outlet property="delegate" destination="HnB-O3-SAF" id="cxT-Hy-akI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7sl-j1-NoJ">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="tether-back-button" id="g30-hD-ER6">
+                            <color key="tintColor" red="0.10196078431372549" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="HnB-O3-SAF" id="uao-yY-1ih"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="KzV-QR-i9K">
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="And-Ug-4YI">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="And-Ug-4YI" secondAttribute="trailing" id="CWw-yQ-zcd"/>
+                                <constraint firstItem="And-Ug-4YI" firstAttribute="top" secondItem="KzV-QR-i9K" secondAttribute="top" id="hjK-jS-suI"/>
+                                <constraint firstItem="And-Ug-4YI" firstAttribute="leading" secondItem="KzV-QR-i9K" secondAttribute="leading" id="lmw-rk-o0E"/>
+                                <constraint firstAttribute="bottom" secondItem="And-Ug-4YI" secondAttribute="bottom" id="z0o-3B-k5o"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X80-ee-qnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4722.5" y="353.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="je9-EU-ADs">
+            <objects>
+                <navigationController storyboardIdentifier="toMapViewControllerFromURLScheme" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Xl-8g-cQY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEB-rp-xlb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EAh-ps-vcg" kind="relationship" relationship="rootViewController" id="a8S-gR-0s7"/>
+                        <segue destination="H00-yT-5Lx" kind="presentation" identifier="toSignUpView" id="aTt-CL-kN8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5K-zt-ts9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2739" y="400"/>
+        </scene>
+        <!--Signup View Controller-->
+        <scene sceneID="ip8-IR-C1o">
+            <objects>
+                <viewController storyboardIdentifier="toSignUpView" id="H00-yT-5Lx" customClass="SignupViewController" customModule="Tether" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4LY-MH-VpJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qzg-Pt-uB8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e3e-zI-ZDd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gSH-6J-3NJ">
+                                <rect key="frame" x="30" y="106" width="315" height="315"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gSH-6J-3NJ" secondAttribute="height" multiplier="1:1" id="B0l-A8-iuN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tether-logo-high-definition-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kys-fC-a1e">
+                                <rect key="frame" x="86" y="236" width="202" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Kys-fC-a1e" secondAttribute="height" multiplier="97:27" id="sKI-jn-VYp"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSE-0h-QSK">
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
+                                <color key="backgroundColor" red="0.10196078431372549" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="dWV-hN-45q"/>
+                                </constraints>
+                                <state key="normal" title="Verify Phone Number">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signupButtonTapped:" destination="H00-yT-5Lx" eventType="touchUpInside" id="l1P-Bi-zk0"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2bv-qv-YFX">
+                                <rect key="frame" x="26" y="436" width="323" height="151"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="iGW-aR-V9F">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="101"/>
+                                        <string key="text">Tether needs access to your contacts and location in order to work properly, so be sure to give your approval when prompted. Don't worry, we won't store any of your information.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="sK1-Iy-AYc">
+                                        <rect key="frame" x="0.0" y="101" width="323" height="51"/>
+                                        <state key="normal" title="By verifying your phone number below, you agree to our Privacy Policy and Terms of Service Agreement.">
+                                            <color key="titleColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="7O0-Xb-a17" kind="presentation" id="leM-KT-g5h"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18431372549019609" green="0.18431372549019609" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LSE-0h-QSK" firstAttribute="leading" secondItem="e3e-zI-ZDd" secondAttribute="leading" id="0gm-lj-9m0"/>
+                            <constraint firstItem="2bv-qv-YFX" firstAttribute="leading" secondItem="e3e-zI-ZDd" secondAttribute="leadingMargin" constant="10" id="1uj-AI-BF8"/>
+                            <constraint firstItem="LSE-0h-QSK" firstAttribute="centerX" secondItem="Kys-fC-a1e" secondAttribute="centerX" id="3Zo-id-Rvm"/>
+                            <constraint firstItem="LSE-0h-QSK" firstAttribute="leading" secondItem="e3e-zI-ZDd" secondAttribute="leading" id="8eg-6e-Gnb"/>
+                            <constraint firstAttribute="trailing" secondItem="LSE-0h-QSK" secondAttribute="trailing" id="BoL-vo-Pz8"/>
+                            <constraint firstItem="LSE-0h-QSK" firstAttribute="bottom" secondItem="qzg-Pt-uB8" secondAttribute="top" id="HIo-T1-kHX"/>
+                            <constraint firstAttribute="trailing" secondItem="gSH-6J-3NJ" secondAttribute="trailing" constant="30" id="JLz-aC-NKu"/>
+                            <constraint firstItem="Kys-fC-a1e" firstAttribute="centerY" secondItem="e3e-zI-ZDd" secondAttribute="centerY" constant="-69.5" id="PdV-Ek-IFq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2bv-qv-YFX" secondAttribute="trailing" constant="10" id="RKV-XA-2dC"/>
+                            <constraint firstItem="gSH-6J-3NJ" firstAttribute="leading" secondItem="e3e-zI-ZDd" secondAttribute="leading" constant="30" id="TSD-6c-9ad"/>
+                            <constraint firstItem="qzg-Pt-uB8" firstAttribute="top" secondItem="LSE-0h-QSK" secondAttribute="bottom" id="bWW-L2-Iu3"/>
+                            <constraint firstItem="LSE-0h-QSK" firstAttribute="top" secondItem="2bv-qv-YFX" secondAttribute="bottom" constant="15" id="e48-lq-Ckt"/>
+                            <constraint firstItem="Kys-fC-a1e" firstAttribute="centerX" secondItem="e3e-zI-ZDd" secondAttribute="centerX" id="jPP-cd-A8W"/>
+                            <constraint firstItem="2bv-qv-YFX" firstAttribute="top" secondItem="gSH-6J-3NJ" secondAttribute="bottom" constant="15" id="jhh-2I-Hxm"/>
+                            <constraint firstItem="gSH-6J-3NJ" firstAttribute="centerX" secondItem="e3e-zI-ZDd" secondAttribute="centerX" id="lRB-7M-Fxc"/>
+                            <constraint firstItem="Kys-fC-a1e" firstAttribute="leading" secondItem="e3e-zI-ZDd" secondAttribute="leadingMargin" constant="70" id="o2Y-jj-QjO"/>
+                            <constraint firstItem="gSH-6J-3NJ" firstAttribute="leading" secondItem="e3e-zI-ZDd" secondAttribute="leadingMargin" constant="15" id="oMP-uR-7eM"/>
+                            <constraint firstItem="gSH-6J-3NJ" firstAttribute="centerY" secondItem="e3e-zI-ZDd" secondAttribute="centerY" constant="-69.5" id="pjW-gi-seY"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lRB-7M-Fxc"/>
+                                <exclude reference="oMP-uR-7eM"/>
+                                <exclude reference="0gm-lj-9m0"/>
+                                <exclude reference="3Zo-id-Rvm"/>
+                                <exclude reference="HIo-T1-kHX"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="greenRingView" destination="gSH-6J-3NJ" id="2B7-m6-gc4"/>
+                        <outlet property="termsButton" destination="sK1-Iy-AYc" id="yig-c4-m4b"/>
+                        <outlet property="tetherLogo" destination="Kys-fC-a1e" id="ArC-SX-WRs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GY6-cb-GdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2738.5" y="1128.5"/>
+        </scene>
+        <!--Compass View Controller-->
+        <scene sceneID="tkY-KP-4pP">
+            <objects>
+                <viewController id="f4K-MV-dFb" customClass="CompassViewController" customModule="Tether" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WgR-A7-0lH"/>
+                        <viewControllerLayoutGuide type="bottom" id="ypg-NW-NRj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Rw-FX-70J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="QuY-NH-n9b">
+                                <rect key="frame" x="172" y="150.5" width="30" height="366"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Mtj-nf-yzQ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QkC-YX-XaL">
+                                <rect key="frame" x="29" y="175" width="317" height="317"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QkC-YX-XaL" secondAttribute="height" multiplier="1:1" id="KRr-il-ncK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GIp-dn-aD4">
+                                <rect key="frame" x="29" y="175" width="317" height="317"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GIp-dn-aD4" secondAttribute="height" multiplier="1:1" id="8We-H6-5Sc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3et-1S-PvD">
+                                <rect key="frame" x="100" y="275" width="175" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3et-1S-PvD" secondAttribute="height" multiplier="167:107" id="Xam-gh-FqP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5o-Pz-8Eo">
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
+                                <color key="backgroundColor" red="0.10196078431372549" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="pUL-iW-n5e"/>
+                                </constraints>
+                                <state key="normal" title="Message">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="composeMessageButtonTapped:" destination="f4K-MV-dFb" eventType="touchUpInside" id="gyX-Ec-h6g"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Approximate Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZCA-lx-pa1">
+                                <rect key="frame" x="91" y="566" width="193" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass-radar_0002_circle5" translatesAutoresizingMaskIntoConstraints="NO" id="57n-eB-wpS">
+                                <rect key="frame" x="35" y="181" width="305" height="305"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="57n-eB-wpS" secondAttribute="height" multiplier="1:1" id="otW-BH-egn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18431372549019609" green="0.18431372549019609" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="E5o-Pz-8Eo" firstAttribute="bottom" secondItem="ypg-NW-NRj" secondAttribute="top" constant="8" symbolic="YES" id="5Dd-Vu-QNo"/>
+                            <constraint firstItem="3et-1S-PvD" firstAttribute="centerY" secondItem="1Rw-FX-70J" secondAttribute="centerY" constant="-2" id="5ol-VB-A1y"/>
+                            <constraint firstItem="QuY-NH-n9b" firstAttribute="centerX" secondItem="1Rw-FX-70J" secondAttribute="centerX" id="6Jc-QP-m7D"/>
+                            <constraint firstItem="E5o-Pz-8Eo" firstAttribute="leading" secondItem="1Rw-FX-70J" secondAttribute="leading" id="8Xe-Cp-yF9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3et-1S-PvD" secondAttribute="trailing" constant="84" id="Aol-La-6v8"/>
+                            <constraint firstItem="57n-eB-wpS" firstAttribute="centerY" secondItem="1Rw-FX-70J" secondAttribute="centerY" id="B8Q-18-SIF"/>
+                            <constraint firstItem="ypg-NW-NRj" firstAttribute="top" secondItem="E5o-Pz-8Eo" secondAttribute="bottom" id="ChC-Lr-BsF"/>
+                            <constraint firstItem="GIp-dn-aD4" firstAttribute="centerX" secondItem="1Rw-FX-70J" secondAttribute="centerX" id="GLv-iK-yCv"/>
+                            <constraint firstItem="ZCA-lx-pa1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="57n-eB-wpS" secondAttribute="bottom" constant="8" id="HlN-Tb-IAQ"/>
+                            <constraint firstItem="QkC-YX-XaL" firstAttribute="centerX" secondItem="1Rw-FX-70J" secondAttribute="centerX" id="IWg-vy-UTG"/>
+                            <constraint firstItem="E5o-Pz-8Eo" firstAttribute="top" secondItem="QuY-NH-n9b" secondAttribute="bottom" constant="82" id="Kit-oX-666"/>
+                            <constraint firstItem="QkC-YX-XaL" firstAttribute="width" secondItem="QkC-YX-XaL" secondAttribute="height" multiplier="1:1" id="M98-4r-K9u"/>
+                            <constraint firstItem="QuY-NH-n9b" firstAttribute="top" secondItem="57n-eB-wpS" secondAttribute="bottom" constant="-341" id="MlM-hv-aFq"/>
+                            <constraint firstItem="E5o-Pz-8Eo" firstAttribute="leading" secondItem="1Rw-FX-70J" secondAttribute="leading" id="P8q-CB-UoU"/>
+                            <constraint firstItem="3et-1S-PvD" firstAttribute="centerX" secondItem="1Rw-FX-70J" secondAttribute="centerX" id="UQQ-Yw-XDk"/>
+                            <constraint firstItem="QuY-NH-n9b" firstAttribute="height" secondItem="57n-eB-wpS" secondAttribute="height" multiplier="1.2" id="V34-SA-cza"/>
+                            <constraint firstItem="QkC-YX-XaL" firstAttribute="centerY" secondItem="1Rw-FX-70J" secondAttribute="centerY" id="VCB-NY-IWg"/>
+                            <constraint firstItem="E5o-Pz-8Eo" firstAttribute="centerX" secondItem="3et-1S-PvD" secondAttribute="centerX" id="VUV-DK-NGa"/>
+                            <constraint firstItem="3et-1S-PvD" firstAttribute="leading" secondItem="1Rw-FX-70J" secondAttribute="leadingMargin" constant="84" id="XeI-uW-e8Q"/>
+                            <constraint firstItem="ZCA-lx-pa1" firstAttribute="centerX" secondItem="E5o-Pz-8Eo" secondAttribute="centerX" id="a00-Kd-psb"/>
+                            <constraint firstItem="57n-eB-wpS" firstAttribute="centerX" secondItem="1Rw-FX-70J" secondAttribute="centerX" id="aX0-fC-roZ"/>
+                            <constraint firstItem="57n-eB-wpS" firstAttribute="leading" secondItem="1Rw-FX-70J" secondAttribute="leading" constant="35" id="bNJ-vT-EMd"/>
+                            <constraint firstItem="ypg-NW-NRj" firstAttribute="top" secondItem="E5o-Pz-8Eo" secondAttribute="bottom" id="ejW-Nz-T1f"/>
+                            <constraint firstItem="QkC-YX-XaL" firstAttribute="leading" secondItem="1Rw-FX-70J" secondAttribute="leadingMargin" constant="13" id="hxh-YS-mAT"/>
+                            <constraint firstItem="QuY-NH-n9b" firstAttribute="centerY" secondItem="1Rw-FX-70J" secondAttribute="centerY" id="q9a-gI-86L"/>
+                            <constraint firstItem="GIp-dn-aD4" firstAttribute="centerY" secondItem="1Rw-FX-70J" secondAttribute="centerY" id="tDA-1d-Nmq"/>
+                            <constraint firstAttribute="trailing" secondItem="E5o-Pz-8Eo" secondAttribute="trailing" id="tg2-qa-wTV"/>
+                            <constraint firstAttribute="trailing" secondItem="57n-eB-wpS" secondAttribute="trailing" constant="35" id="upz-Qh-X9W"/>
+                            <constraint firstItem="57n-eB-wpS" firstAttribute="leading" secondItem="1Rw-FX-70J" secondAttribute="leadingMargin" constant="17" id="vBI-x4-Vi4"/>
+                            <constraint firstItem="E5o-Pz-8Eo" firstAttribute="top" secondItem="ZCA-lx-pa1" secondAttribute="bottom" constant="15" id="w1A-Ik-fcW"/>
+                            <constraint firstItem="GIp-dn-aD4" firstAttribute="leading" secondItem="1Rw-FX-70J" secondAttribute="leadingMargin" constant="13" id="wvQ-Mc-JK2"/>
+                            <constraint firstItem="ZCA-lx-pa1" firstAttribute="top" secondItem="QuY-NH-n9b" secondAttribute="bottom" constant="8" symbolic="YES" id="xJE-li-A5p"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aX0-fC-roZ"/>
+                                <exclude reference="vBI-x4-Vi4"/>
+                                <exclude reference="MlM-hv-aFq"/>
+                                <exclude reference="HlN-Tb-IAQ"/>
+                                <exclude reference="xJE-li-A5p"/>
+                                <exclude reference="5Dd-Vu-QNo"/>
+                                <exclude reference="8Xe-Cp-yF9"/>
+                                <exclude reference="Kit-oX-666"/>
+                                <exclude reference="VUV-DK-NGa"/>
+                                <exclude reference="ejW-Nz-T1f"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="lWR-nS-GgB">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="tether-back-button" id="5Ia-T4-Oq9">
+                            <color key="tintColor" red="0.1019607843" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="f4K-MV-dFb" id="Jhr-o6-qfw"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="cIn-lY-ibl">
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdP-uz-SOM">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="FdP-uz-SOM" secondAttribute="trailing" id="13M-19-cKC"/>
+                                <constraint firstAttribute="bottom" secondItem="FdP-uz-SOM" secondAttribute="bottom" id="9ZH-SJ-S26"/>
+                                <constraint firstItem="FdP-uz-SOM" firstAttribute="top" secondItem="cIn-lY-ibl" secondAttribute="top" id="bHr-do-96e"/>
+                                <constraint firstItem="FdP-uz-SOM" firstAttribute="leading" secondItem="cIn-lY-ibl" secondAttribute="leading" id="saZ-Ym-NFF"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="ZCA-lx-pa1" id="u7Q-YT-xiV"/>
+                        <outlet property="arrow" destination="QuY-NH-n9b" id="98E-HX-Dpf"/>
+                        <outlet property="distanceFromContactLabel" destination="3et-1S-PvD" id="Jca-qp-ywE"/>
+                        <outlet property="greenRingView" destination="QkC-YX-XaL" id="Ccq-s9-2dA"/>
+                        <outlet property="mainCircle" destination="57n-eB-wpS" id="p9N-YP-ceh"/>
+                        <outlet property="messageButton" destination="E5o-Pz-8Eo" id="wx4-XN-4Ip"/>
+                        <outlet property="radarView" destination="GIp-dn-aD4" id="Gsk-ds-7Zg"/>
+                        <outlet property="titleLabel" destination="FdP-uz-SOM" id="mZa-pz-q8K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNb-oc-tin" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4235.5" y="-395.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nIb-f9-hNk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K7L-n9-H7k" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xpw-V7-D2l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HnB-O3-SAF" kind="relationship" relationship="rootViewController" id="VdN-hp-gr0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqu-SX-Y2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4190.5" y="353.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9qe-sz-XVL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6F4-kz-dgF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hsw-37-sTb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8gL-Xt-xsF" kind="relationship" relationship="rootViewController" id="FPF-5i-DQu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zR-Tr-9B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3588" y="1097"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="PZs-B4-t7A">
+            <objects>
+                <viewController id="8gL-Xt-xsF" customClass="infoViewController" customModule="Tether" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qxO-hw-tTh"/>
+                        <viewControllerLayoutGuide type="bottom" id="2HY-zJ-DfH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7bl-2z-zzH">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXg-cx-mjR">
+                                <rect key="frame" x="20" y="20" width="335" height="563"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xfv-sy-pVo">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="3301"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0oE-5n-M6i">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="185"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Tether Premium" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Q8E-vp-Sei">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="IYO-iv-5iZ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Yhv-jt-1sa">
+                                                        <rect key="frame" x="0.0" y="34" width="335" height="101"/>
+                                                        <string key="text">Tether Premium allows you to tether to an unlimited number of friends, making it perfect for ski trips, music festivals, family outings, shopping with friends, and any number of group adventures.</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xev-Mj-CGn">
+                                                        <rect key="frame" x="50" y="145" width="235" height="40"/>
+                                                        <color key="backgroundColor" red="0.1019607843" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="15j-ZB-TI2"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <state key="normal" title="Upgrade/Restore">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buyButtonTapped:" destination="8gL-Xt-xsF" eventType="touchUpInside" id="56W-dg-Ezi"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Q8E-vp-Sei" firstAttribute="leading" secondItem="0oE-5n-M6i" secondAttribute="leading" id="0VC-aT-rvp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Yhv-jt-1sa" secondAttribute="trailing" id="2dN-Ej-2le"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Q8E-vp-Sei" secondAttribute="trailing" id="74J-8r-pBL"/>
+                                                    <constraint firstItem="Yhv-jt-1sa" firstAttribute="leading" secondItem="0oE-5n-M6i" secondAttribute="leading" id="Rg7-5s-FLb"/>
+                                                    <constraint firstItem="xev-Mj-CGn" firstAttribute="width" secondItem="Yhv-jt-1sa" secondAttribute="width" multiplier="0.7" id="zgk-iR-d8s"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G0T-qe-q1c">
+                                                <rect key="frame" x="0.0" y="215" width="335" height="215"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Our Privacy Promise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4O-4u-3wM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Gfd-Q2-KTL">
+                                                        <rect key="frame" x="0.0" y="34" width="335" height="181"/>
+                                                        <string key="text">Tether is all about helping you physically find your friends and loved ones. That is all we want to do. So just to make sure you feel comfortable letting us help you, we promise not to sell or give any information about you to anyone else. On top of that, we promise that we will never permanently store your location. That is for you and your friends to know, not us.</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9oz-oa-aI4">
+                                                <rect key="frame" x="0.0" y="460" width="335" height="155"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Accuracy Disclaimer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RH0-o2-qmr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fbR-Kf-mei">
+                                                        <rect key="frame" x="0.0" y="34" width="335" height="121"/>
+                                                        <string key="text">We try really hard to give you the most accurate location information possible, but we're limited by the accuracy of the GPS and Compass hardware in your phone. If there's a real emergency, please don't rely solely on this app.</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YAy-a9-hGm">
+                                                <rect key="frame" x="0.0" y="644" width="335" height="207"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Background Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMq-mJ-Qnb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eno-NH-1Gt">
+                                                        <rect key="frame" x="0.0" y="24" width="335" height="183"/>
+                                                        <string key="text">Continued use of GPS running in the background can dramatically decrease battery life. We try to minimize the problem by decreasing the amount of background gps requests and asking you if you want to untether after an hour of not using the app. If for some reason you don't see the notification, we'll stop using your location in the background after two hours.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fwk-O8-vuz">
+                                                <rect key="frame" x="0.0" y="881" width="335" height="2420"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" text="Terms of Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3D-I2-JVb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" ambiguous="YES" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="zH6-sg-sJ6">
+                                                        <rect key="frame" x="0.0" y="34" width="335" height="2386"/>
+                                                        <string key="text">This End User License Agreement (“Agreement”) is between you and Tether and governs use of this app made available through the Apple App Store. By installing the Tether App, you agree to be bound by this Agreement and understand that there is no tolerance for content abuse. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Tether App.
+
+Tether currently does not allow users to post any content, but should this feature arise in the future, we will strongly enforce a no tolerance policy against objectionable content. Further, if there is any indication that you are using this app in any way that can be construed as illegal, we will terminate your use of this app.
+
+1. Parties
+This Agreement is between you and Tether only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Tether, not Apple, is solely responsible for the Tether App and its content.
+2. Privacy
+Tether may collect and use information about your usage of the Tether App, including certain types of information from and about your device. Tether may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Tether App.
+3. Limited License
+Tether grants you a limited, non-exclusive, non-transferable, revocable license to use the Tether App for your personal, non-commercial purposes. You may only use the Tether App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
+4. Age Restrictions
+By using the Tether App, you represent and warrant that (a) you are 18 years of age or older and you agree to be bound by this Agreement; and (b) your use of the Tether App does not violate any applicable law or regulation. Your access to the Tether App may be terminated without warning if Tether believes, in its sole discretion, that you are under the age of 18 years.
+5. Objectionable Content Policy
+Objectionable content may not be submitted to Tether, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
+6. Warranty
+Tether disclaims all warranties about the Tether App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Tether, not Apple, shall be solely responsible for such warranty.
+7. Maintenance and Support
+Tether does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Tether, not Apple, shall be obligated to furnish any such maintenance or support.
+8. Product Claims
+Tether, not Apple, is responsible for addressing any claims by you relating to the Tether App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Tether App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
+9. Third Party Intellectual Property Claims
+Tether shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Tether App. To the extent Tether is required to provide indemnification by applicable law, Tether, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Tether App or your use of it infringes any third party intellectual property right.
+10. Map and Compass accuracy
+Tether shall not be relied upon for accurate map or compass data. Tether provides data that helps you to locate contacts who have agreed to share their location with you, and Tether attempts to show the bearing between you and said contacts, but does not guarantee accuracy as GPS availability, Wi-Fi and Cellular connection, hardware conditions, and many other factors greatly influence the accuracy of information provided. 
+
+</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3301" id="Mgt-x8-mK1"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Xfv-sy-pVo" firstAttribute="top" secondItem="nXg-cx-mjR" secondAttribute="top" id="Mh2-Xc-Imp"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xfv-sy-pVo" secondAttribute="bottom" id="P0F-rb-6vC"/>
+                                    <constraint firstItem="Xfv-sy-pVo" firstAttribute="width" secondItem="nXg-cx-mjR" secondAttribute="width" id="XRD-9T-lwZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xfv-sy-pVo" secondAttribute="trailing" id="iRH-O2-eXw"/>
+                                    <constraint firstItem="Xfv-sy-pVo" firstAttribute="leading" secondItem="nXg-cx-mjR" secondAttribute="leading" id="raj-vS-4ri"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1843137255" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nXg-cx-mjR" firstAttribute="leading" secondItem="7bl-2z-zzH" secondAttribute="leading" constant="20" id="6fZ-nS-VLg"/>
+                            <constraint firstItem="2HY-zJ-DfH" firstAttribute="top" secondItem="nXg-cx-mjR" secondAttribute="bottom" constant="20" id="Yrx-rt-VXM"/>
+                            <constraint firstItem="nXg-cx-mjR" firstAttribute="top" secondItem="qxO-hw-tTh" secondAttribute="bottom" constant="20" id="wmb-dS-GOc"/>
+                            <constraint firstAttribute="trailing" secondItem="nXg-cx-mjR" secondAttribute="trailing" constant="20" id="y9b-Df-gBk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MZ9-iy-qqW">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="tether-back-button" id="9p0-Aa-IhG">
+                            <color key="tintColor" red="0.1019607843" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="8gL-Xt-xsF" id="U7Q-Fy-Ek2"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="kl3-IJ-UjU">
+                            <rect key="frame" x="121" y="6" width="134" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCY-Q2-a7b">
+                                    <rect key="frame" x="0.0" y="0.0" width="134" height="33"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="999" image="Tether icon" translatesAutoresizingMaskIntoConstraints="NO" id="6hR-cU-F4r">
+                                            <rect key="frame" x="0.0" y="0.0" width="39" height="33"/>
+                                            <gestureRecognizers/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Tether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7e-Nq-MPH">
+                                            <rect key="frame" x="39" y="0.0" width="95" height="33"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="iCY-Q2-a7b" secondAttribute="trailing" id="11f-df-zOt"/>
+                                <constraint firstItem="iCY-Q2-a7b" firstAttribute="top" secondItem="kl3-IJ-UjU" secondAttribute="top" id="4c0-yK-P22"/>
+                                <constraint firstAttribute="bottom" secondItem="iCY-Q2-a7b" secondAttribute="bottom" id="mqg-UN-MJN"/>
+                                <constraint firstItem="iCY-Q2-a7b" firstAttribute="leading" secondItem="kl3-IJ-UjU" secondAttribute="leading" id="wPe-aP-Yeo"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="scrollView" destination="nXg-cx-mjR" id="UKH-MF-4PZ"/>
+                        <outlet property="upgradeButton" destination="xev-Mj-CGn" id="lo1-MG-GNF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZM2-zC-Ojv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4082.5" y="1096.5"/>
+        </scene>
+        <!--Terms View Controller-->
+        <scene sceneID="eGC-sc-xiq">
+            <objects>
+                <viewController id="TST-ST-YXJ" customClass="TermsViewController" customModule="Tether" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qaz-9w-tDY"/>
+                        <viewControllerLayoutGuide type="bottom" id="H3w-9A-Owa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vav-0I-PUb">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHu-4y-vUU">
+                                <rect key="frame" x="20" y="20" width="335" height="563"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="kKu-Id-kVK">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="3208"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h4h-BP-FW6">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="215"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Our Privacy Promise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qT-dT-edH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Lvg-ed-a73">
+                                                        <rect key="frame" x="0.0" y="34" width="335" height="181"/>
+                                                        <string key="text">Tether is all about helping you physically find your friends and loved ones. That is all we want to do. So just to make sure you feel comfortable letting us help you, we promise not to sell or give any information about you to anyone else. On top of that, we promise that we will never permanently store your location. That is for you and your friends to know, not us.</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uRb-8t-hmj">
+                                                <rect key="frame" x="0.0" y="245" width="335" height="155"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Accuracy Disclaimer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOm-65-hCc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eNJ-4h-4gE">
+                                                        <rect key="frame" x="0.0" y="34" width="335" height="121"/>
+                                                        <string key="text">We try really hard to give you the most accurate location information possible, but we're limited by the accuracy of the GPS and Compass hardware in your phone. If there's a real emergency, please don't rely solely on this app.</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wfH-ej-sdX">
+                                                <rect key="frame" x="0.0" y="430" width="335" height="207"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wz7-Ey-Ox1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCD-cR-tYZ">
+                                                        <rect key="frame" x="0.0" y="24" width="335" height="183"/>
+                                                        <string key="text">Continued use of GPS running in the background can dramatically decrease battery life. We try to minimize the problem by decreasing the amount of background gps requests and asking you if you want to untether after an hour of not using the app. If for some reason you don't see the notification, we'll stop using your location in the background after two hours.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fio-gP-V48">
+                                                <rect key="frame" x="0.0" y="667" width="335" height="2542"/>
+                                                <subviews>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Terms of Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzS-kG-C1m">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="TRA-zl-33O">
+                                                        <rect key="frame" x="0.0" y="34" width="335" height="2508"/>
+                                                        <string key="text">This End User License Agreement (“Agreement”) is between you and Tether and governs use of this app made available through the Apple App Store. By installing the Tether App, you agree to be bound by this Agreement and understand that there is no tolerance for content abuse. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Tether App.
+
+Tether currently does not allow users to post any content, but should this feature arise in the future, we will strongly enforce a no tolerance policy against objectionable content. Further, if there is any indication that you are using this app in any way that can be construed as illegal, we will terminate your use of this app.
+
+1. Parties
+This Agreement is between you and Tether only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Tether, not Apple, is solely responsible for the Tether App and its content.
+2. Privacy
+Tether may collect and use information about your usage of the Tether App, including certain types of information from and about your device. Tether may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Tether App.
+3. Limited License
+Tether grants you a limited, non-exclusive, non-transferable, revocable license to use the Tether App for your personal, non-commercial purposes. You may only use the Tether App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
+4. Age Restrictions
+By using the Tether App, you represent and warrant that (a) you are 18 years of age or older and you agree to be bound by this Agreement; and (b) your use of the Tether App does not violate any applicable law or regulation. Your access to the Tether App may be terminated without warning if Tether believes, in its sole discretion, that you are under the age of 18 years.
+5. Objectionable Content Policy
+Objectionable content may not be submitted to Tether, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
+6. Warranty
+Tether disclaims all warranties about the Tether App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Tether, not Apple, shall be solely responsible for such warranty.
+7. Maintenance and Support
+Tether does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Tether, not Apple, shall be obligated to furnish any such maintenance or support.
+8. Product Claims
+Tether, not Apple, is responsible for addressing any claims by you relating to the Tether App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Tether App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
+9. Third Party Intellectual Property Claims
+Tether shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Tether App. To the extent Tether is required to provide indemnification by applicable law, Tether, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Tether App or your use of it infringes any third party intellectual property right.
+10. Map and Compass accuracy
+Tether shall not be relied upon for accurate map or compass data. Tether provides data that helps you to locate contacts who have agreed to share their location with you, and Tether attempts to show the bearing between you and said contacts, but does not guarantee accuracy as GPS availability, Wi-Fi and Cellular connection, hardware conditions, and many other factors greatly influence the accuracy of information provided. 
+
+</string>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                        <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kKu-Id-kVK" firstAttribute="width" secondItem="iHu-4y-vUU" secondAttribute="width" id="I4C-Xc-1Sp"/>
+                                    <constraint firstAttribute="bottom" secondItem="kKu-Id-kVK" secondAttribute="bottom" id="QYR-jX-Cj0"/>
+                                    <constraint firstItem="kKu-Id-kVK" firstAttribute="leading" secondItem="iHu-4y-vUU" secondAttribute="leading" id="WSL-ve-Glc"/>
+                                    <constraint firstItem="kKu-Id-kVK" firstAttribute="top" secondItem="iHu-4y-vUU" secondAttribute="top" id="kIy-NH-oQZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="kKu-Id-kVK" secondAttribute="trailing" id="yYd-MN-Oa0"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1843137255" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iHu-4y-vUU" firstAttribute="leading" secondItem="vav-0I-PUb" secondAttribute="leading" constant="20" id="BVP-ms-kXP"/>
+                            <constraint firstItem="iHu-4y-vUU" firstAttribute="top" secondItem="Qaz-9w-tDY" secondAttribute="bottom" constant="20" id="P70-Hg-pOb"/>
+                            <constraint firstAttribute="trailing" secondItem="iHu-4y-vUU" secondAttribute="trailing" constant="20" id="Uuu-SZ-FRH"/>
+                            <constraint firstItem="H3w-9A-Owa" firstAttribute="top" secondItem="iHu-4y-vUU" secondAttribute="bottom" constant="20" id="w2a-fk-IB3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jtt-Ds-bzr">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="tether-back-button" id="ch8-9R-Ohi">
+                            <color key="tintColor" red="0.1019607843" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonTapped:" destination="TST-ST-YXJ" id="PJw-ZK-dic"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="tOJ-98-bCN">
+                            <rect key="frame" x="120.5" y="5.5" width="134" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xGf-5m-mMI">
+                                    <rect key="frame" x="0.0" y="0.0" width="134" height="33"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="999" image="Tether icon" translatesAutoresizingMaskIntoConstraints="NO" id="dCZ-DC-JCW">
+                                            <rect key="frame" x="0.0" y="0.0" width="39" height="33"/>
+                                            <gestureRecognizers/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Tether" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4P-w4-cTx">
+                                            <rect key="frame" x="39" y="0.0" width="95" height="33"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="xGf-5m-mMI" firstAttribute="top" secondItem="tOJ-98-bCN" secondAttribute="top" id="DUa-wk-TjW"/>
+                                <constraint firstAttribute="trailing" secondItem="xGf-5m-mMI" secondAttribute="trailing" id="QNt-dO-Rm5"/>
+                                <constraint firstAttribute="bottom" secondItem="xGf-5m-mMI" secondAttribute="bottom" id="XdA-zg-QuZ"/>
+                                <constraint firstItem="xGf-5m-mMI" firstAttribute="leading" secondItem="tOJ-98-bCN" secondAttribute="leading" id="icH-0y-nVn"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dy-Cs-mgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3202.5" y="1863.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jfh-Ku-LUq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7O0-Xb-a17" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k1z-UJ-cFB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TST-ST-YXJ" kind="relationship" relationship="rootViewController" id="O34-Xj-HQZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aA-bg-JdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2738" y="1864"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add Tether" width="28" height="31"/>
+        <image name="Location" width="50" height="50"/>
+        <image name="Magnifying glass" width="30" height="30"/>
+        <image name="Satellite" width="30" height="30"/>
+        <image name="Tether icon" width="42" height="50"/>
+        <image name="compass-arrow" width="343" height="2400"/>
+        <image name="compass-radar_0002_circle5" width="2054" height="2054"/>
+        <image name="location-icon" width="75" height="75"/>
+        <image name="tether-back-button" width="13" height="21"/>
+        <image name="tether-logo-high-definition-1" width="2975" height="794"/>
+    </resources>
+</document>

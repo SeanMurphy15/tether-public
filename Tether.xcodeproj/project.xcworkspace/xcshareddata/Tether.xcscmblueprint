@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C428263DB1CBE9FAED3D65BC7E04B4CC98F0BFD1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C428263DB1CBE9FAED3D65BC7E04B4CC98F0BFD1" : 0,
+    "9174E27764DB3DF7DBA141D297E342A9205834FE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5204C5D0-CDDC-4262-A7A4-CDD143A9D1E0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C428263DB1CBE9FAED3D65BC7E04B4CC98F0BFD1" : "Tether\/",
+    "9174E27764DB3DF7DBA141D297E342A9205834FE" : "Capstone\/Double\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Tether",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Tether.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jamesrp13\/Double.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9174E27764DB3DF7DBA141D297E342A9205834FE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mikeandike\/Tether.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C428263DB1CBE9FAED3D65BC7E04B4CC98F0BFD1"
+    }
+  ]
+}

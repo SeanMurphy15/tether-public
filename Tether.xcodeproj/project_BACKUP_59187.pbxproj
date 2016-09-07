@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1ACCDC691C3C57D600E39371 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCDC681C3C57D600E39371 /* User.swift */; };
+		1ACCDC6B1C3C57E800E39371 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCDC6A1C3C57E800E39371 /* Friend.swift */; };
+		1ACCDC6D1C3C642200E39371 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCDC6C1C3C642200E39371 /* FirebaseController.swift */; };
+		1ACCDC721C3C67F200E39371 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACCDC711C3C67F200E39371 /* libicucore.tbd */; };
+		1ACCDC741C3C686800E39371 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACCDC731C3C686800E39371 /* libc++.tbd */; };
+		1ACCDC761C3C686F00E39371 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACCDC751C3C686F00E39371 /* CFNetwork.framework */; };
+		1ACCDC781C3C687700E39371 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACCDC771C3C687700E39371 /* Security.framework */; };
+		1ACCDC7A1C3C687D00E39371 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACCDC791C3C687D00E39371 /* SystemConfiguration.framework */; };
+		1ACCDC811C3C6EC800E39371 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACCDC801C3C6EC800E39371 /* Firebase.framework */; };
+		1ACCDC851C3C804300E39371 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCDC841C3C804300E39371 /* UserController.swift */; };
+		1ACCDC871C3C805000E39371 /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCDC861C3C805000E39371 /* FriendController.swift */; };
+		1ACCDC8B1C3C8FA800E39371 /* Tether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCDC8A1C3C8FA800E39371 /* Tether.swift */; };
+		1ACCDC8D1C3C8FDD00E39371 /* TetherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACCDC8C1C3C8FDD00E39371 /* TetherController.swift */; };
+		8C4738661C3B3B4C000142C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4738651C3B3B4C000142C3 /* AppDelegate.swift */; };
+		8C47386B1C3B3B4C000142C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4738691C3B3B4C000142C3 /* Main.storyboard */; };
+		8C47386D1C3B3B4C000142C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C47386C1C3B3B4C000142C3 /* Assets.xcassets */; };
+		8C4738701C3B3B4C000142C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C47386E1C3B3B4C000142C3 /* LaunchScreen.storyboard */; };
+		921BC7F61C3EDE110048D456 /* RequestsReceivedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BC7F51C3EDE110048D456 /* RequestsReceivedCell.swift */; };
+		921BC7F81C3EDE400048D456 /* RequestSentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BC7F71C3EDE400048D456 /* RequestSentCell.swift */; };
+		921BC7FA1C3EDE8B0048D456 /* TetherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921BC7F91C3EDE8B0048D456 /* TetherCell.swift */; };
+		92AC73DD1C3C871600A75814 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC73DC1C3C871600A75814 /* ContactController.swift */; };
+		92D7E6441C3C58F30084E725 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D7E6431C3C58F30084E725 /* LocationController.swift */; };
+		92F3B8E71C3F032E007A6DCE /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3B8E61C3F032E007A6DCE /* ContactCell.swift */; };
+		92F3B8E91C3F1080007A6DCE /* Swift Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3B8E81C3F1080007A6DCE /* Swift Extensions.swift */; };
+		FF02FE261C3D833E00549529 /* MessageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF02FE251C3D833E00549529 /* MessageExtension.swift */; };
+		FFD55C9F1C3B49BE00454AD5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD55C9E1C3B49BE00454AD5 /* MapViewController.swift */; };
+		FFD55CA11C3B4CB900454AD5 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD55CA01C3B4CB900454AD5 /* ContactsTableViewController.swift */; };
+		FFD55CA31C3B533F00454AD5 /* CompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD55CA21C3B533F00454AD5 /* CompassViewController.swift */; };
+		FFD55CB91C3C7D4A00454AD5 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD55CB81C3C7D4A00454AD5 /* SignupViewController.swift */; };
+		FFD55CBF1C3C7E7500454AD5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD55CBB1C3C7E7500454AD5 /* Fabric.framework */; };
+		FFD55CC01C3C7E7500454AD5 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD55CBC1C3C7E7500454AD5 /* DigitsKit.framework */; };
+		FFD55CC11C3C7E7500454AD5 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FFD55CBD1C3C7E7500454AD5 /* DigitsKitResources.bundle */; };
+		FFD55CC21C3C7E7500454AD5 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD55CBE1C3C7E7500454AD5 /* TwitterCore.framework */; };
+		FFFF60651C3F3FC2000BC541 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF60641C3F3FC2000BC541 /* SearchResultsTableViewController.swift */; };
+		FFFF60711C431C4E000BC541 /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF60701C431C4E000BC541 /* AlertExtension.swift */; };
+		FFFF60751C434534000BC541 /* AnnotationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF60741C434534000BC541 /* AnnotationExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1ACCDC831C3C6EC800E39371 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1ACCDC681C3C57D600E39371 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1ACCDC6A1C3C57E800E39371 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		1ACCDC6C1C3C642200E39371 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		1ACCDC711C3C67F200E39371 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		1ACCDC731C3C686800E39371 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1ACCDC751C3C686F00E39371 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1ACCDC771C3C687700E39371 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1ACCDC791C3C687D00E39371 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1ACCDC801C3C6EC800E39371 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		1ACCDC841C3C804300E39371 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		1ACCDC861C3C805000E39371 /* FriendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
+		1ACCDC8A1C3C8FA800E39371 /* Tether.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tether.swift; sourceTree = "<group>"; };
+		1ACCDC8C1C3C8FDD00E39371 /* TetherController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TetherController.swift; sourceTree = "<group>"; };
+		8C4738621C3B3B4C000142C3 /* Tether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tether.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4738651C3B3B4C000142C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C47386A1C3B3B4C000142C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C47386C1C3B3B4C000142C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C47386F1C3B3B4C000142C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C4738711C3B3B4C000142C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		921BC7F51C3EDE110048D456 /* RequestsReceivedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsReceivedCell.swift; sourceTree = "<group>"; };
+		921BC7F71C3EDE400048D456 /* RequestSentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSentCell.swift; sourceTree = "<group>"; };
+		921BC7F91C3EDE8B0048D456 /* TetherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TetherCell.swift; sourceTree = "<group>"; };
+		92AC73DC1C3C871600A75814 /* ContactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		92D7E6431C3C58F30084E725 /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		92F3B8E61C3F032E007A6DCE /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		92F3B8E81C3F1080007A6DCE /* Swift Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift Extensions.swift"; sourceTree = "<group>"; };
+		FF02FE251C3D833E00549529 /* MessageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageExtension.swift; sourceTree = "<group>"; };
+		FFD55C9E1C3B49BE00454AD5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FFD55CA01C3B4CB900454AD5 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		FFD55CA21C3B533F00454AD5 /* CompassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassViewController.swift; sourceTree = "<group>"; };
+		FFD55CB81C3C7D4A00454AD5 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		FFD55CBB1C3C7E7500454AD5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		FFD55CBC1C3C7E7500454AD5 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
+		FFD55CBD1C3C7E7500454AD5 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
+		FFD55CBE1C3C7E7500454AD5 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		FFFF60641C3F3FC2000BC541 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		FFFF60701C431C4E000BC541 /* AlertExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
+		FFFF60741C434534000BC541 /* AnnotationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8C47385F1C3B3B4C000142C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFD55CBF1C3C7E7500454AD5 /* Fabric.framework in Frameworks */,
+				1ACCDC7A1C3C687D00E39371 /* SystemConfiguration.framework in Frameworks */,
+				1ACCDC811C3C6EC800E39371 /* Firebase.framework in Frameworks */,
+				FFD55CC01C3C7E7500454AD5 /* DigitsKit.framework in Frameworks */,
+				FFD55CC21C3C7E7500454AD5 /* TwitterCore.framework in Frameworks */,
+				1ACCDC781C3C687700E39371 /* Security.framework in Frameworks */,
+				1ACCDC761C3C686F00E39371 /* CFNetwork.framework in Frameworks */,
+				1ACCDC741C3C686800E39371 /* libc++.tbd in Frameworks */,
+				1ACCDC721C3C67F200E39371 /* libicucore.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1ACCDC6E1C3C648500E39371 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1ACCDC6C1C3C642200E39371 /* FirebaseController.swift */,
+				1ACCDC841C3C804300E39371 /* UserController.swift */,
+				1ACCDC861C3C805000E39371 /* FriendController.swift */,
+				1ACCDC8C1C3C8FDD00E39371 /* TetherController.swift */,
+			);
+			name = ModelControllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		1ACCDC7B1C3C689000E39371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFD55CBB1C3C7E7500454AD5 /* Fabric.framework */,
+				FFD55CBC1C3C7E7500454AD5 /* DigitsKit.framework */,
+				FFD55CBD1C3C7E7500454AD5 /* DigitsKitResources.bundle */,
+				FFD55CBE1C3C7E7500454AD5 /* TwitterCore.framework */,
+				1ACCDC791C3C687D00E39371 /* SystemConfiguration.framework */,
+				1ACCDC771C3C687700E39371 /* Security.framework */,
+				1ACCDC751C3C686F00E39371 /* CFNetwork.framework */,
+				1ACCDC801C3C6EC800E39371 /* Firebase.framework */,
+				1ACCDC731C3C686800E39371 /* libc++.tbd */,
+				1ACCDC711C3C67F200E39371 /* libicucore.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		290783DA1C3C59180017788A /* ModelObjects */ = {
+			isa = PBXGroup;
+			children = (
+				1ACCDC681C3C57D600E39371 /* User.swift */,
+				1ACCDC6A1C3C57E800E39371 /* Friend.swift */,
+				1ACCDC8A1C3C8FA800E39371 /* Tether.swift */,
+			);
+			name = ModelObjects;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		8C4738591C3B3B4C000142C3 = {
+			isa = PBXGroup;
+			children = (
+				1ACCDC7B1C3C689000E39371 /* Frameworks */,
+				8C4738641C3B3B4C000142C3 /* Tether */,
+				8C4738631C3B3B4C000142C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8C4738631C3B3B4C000142C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C4738621C3B3B4C000142C3 /* Tether.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8C4738641C3B3B4C000142C3 /* Tether */ = {
+			isa = PBXGroup;
+			children = (
+				8C4738651C3B3B4C000142C3 /* AppDelegate.swift */,
+				8C4738691C3B3B4C000142C3 /* Main.storyboard */,
+				290783DA1C3C59180017788A /* ModelObjects */,
+				1ACCDC6E1C3C648500E39371 /* ModelControllers */,
+				FFFF60721C431DFA000BC541 /* Extensions */,
+				FF02FE271C3D8BC100549529 /* Controllers */,
+				FFD55CA41C3B56BB00454AD5 /* ViewControllers */,
+				FFFF60731C431E11000BC541 /* CustomCells */,
+				8C47386C1C3B3B4C000142C3 /* Assets.xcassets */,
+				8C47386E1C3B3B4C000142C3 /* LaunchScreen.storyboard */,
+				8C4738711C3B3B4C000142C3 /* Info.plist */,
+			);
+			path = Tether;
+			sourceTree = "<group>";
+		};
+		FF02FE271C3D8BC100549529 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				92D7E6431C3C58F30084E725 /* LocationController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FFD55CA41C3B56BB00454AD5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFD55CB81C3C7D4A00454AD5 /* SignupViewController.swift */,
+				FFD55CA21C3B533F00454AD5 /* CompassViewController.swift */,
+				FFD55C9E1C3B49BE00454AD5 /* MapViewController.swift */,
+				FFD55CA01C3B4CB900454AD5 /* ContactsTableViewController.swift */,
+				FFFF60641C3F3FC2000BC541 /* SearchResultsTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FFFF60721C431DFA000BC541 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF02FE251C3D833E00549529 /* MessageExtension.swift */,
+				FFFF60701C431C4E000BC541 /* AlertExtension.swift */,
+				FFFF60741C434534000BC541 /* AnnotationExtension.swift */,
+				92AC73DC1C3C871600A75814 /* ContactController.swift */,
+				92F3B8E81C3F1080007A6DCE /* Swift Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FFFF60731C431E11000BC541 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				92F3B8E61C3F032E007A6DCE /* ContactCell.swift */,
+				921BC7F51C3EDE110048D456 /* RequestsReceivedCell.swift */,
+				921BC7F71C3EDE400048D456 /* RequestSentCell.swift */,
+				921BC7F91C3EDE8B0048D456 /* TetherCell.swift */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8C4738611C3B3B4C000142C3 /* Tether */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C4738741C3B3B4C000142C3 /* Build configuration list for PBXNativeTarget "Tether" */;
+			buildPhases = (
+				8C47385E1C3B3B4C000142C3 /* Sources */,
+				8C47385F1C3B3B4C000142C3 /* Frameworks */,
+				8C4738601C3B3B4C000142C3 /* Resources */,
+				1ACCDC831C3C6EC800E39371 /* Embed Frameworks */,
+				FFD55CBA1C3C7E6400454AD5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tether;
+			productName = Tether;
+			productReference = 8C4738621C3B3B4C000142C3 /* Tether.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8C47385A1C3B3B4C000142C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = DevMountain;
+				TargetAttributes = {
+					8C4738611C3B3B4C000142C3 = {
+						CreatedOnToolsVersion = 7.2;
+<<<<<<< HEAD
+						DevelopmentTeam = LWPMR5Q9R2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
+=======
+						DevelopmentTeam = 83CEPW38FM;
+>>>>>>> 42b19cbdfc1002fbf9f008840d989a5ce0e24e94
+					};
+				};
+			};
+			buildConfigurationList = 8C47385D1C3B3B4C000142C3 /* Build configuration list for PBXProject "Tether" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8C4738591C3B3B4C000142C3;
+			productRefGroup = 8C4738631C3B3B4C000142C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C4738611C3B3B4C000142C3 /* Tether */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8C4738601C3B3B4C000142C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFD55CC11C3C7E7500454AD5 /* DigitsKitResources.bundle in Resources */,
+				8C4738701C3B3B4C000142C3 /* LaunchScreen.storyboard in Resources */,
+				8C47386D1C3B3B4C000142C3 /* Assets.xcassets in Resources */,
+				8C47386B1C3B3B4C000142C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FFD55CBA1C3C7E6400454AD5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 5095a735973bf40655e393f80ff790f9e9d6c3e7 7baa12528ac971d612344bd182fe1a9feeb7dbe7b58f8d2fb446e99b1985f091";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8C47385E1C3B3B4C000142C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C4738661C3B3B4C000142C3 /* AppDelegate.swift in Sources */,
+				1ACCDC6D1C3C642200E39371 /* FirebaseController.swift in Sources */,
+				FFD55CB91C3C7D4A00454AD5 /* SignupViewController.swift in Sources */,
+				1ACCDC851C3C804300E39371 /* UserController.swift in Sources */,
+				FFD55C9F1C3B49BE00454AD5 /* MapViewController.swift in Sources */,
+				FFFF60651C3F3FC2000BC541 /* SearchResultsTableViewController.swift in Sources */,
+				FFD55CA11C3B4CB900454AD5 /* ContactsTableViewController.swift in Sources */,
+				1ACCDC8B1C3C8FA800E39371 /* Tether.swift in Sources */,
+				1ACCDC8D1C3C8FDD00E39371 /* TetherController.swift in Sources */,
+				921BC7F61C3EDE110048D456 /* RequestsReceivedCell.swift in Sources */,
+				92F3B8E71C3F032E007A6DCE /* ContactCell.swift in Sources */,
+				921BC7FA1C3EDE8B0048D456 /* TetherCell.swift in Sources */,
+				921BC7F81C3EDE400048D456 /* RequestSentCell.swift in Sources */,
+				1ACCDC6B1C3C57E800E39371 /* Friend.swift in Sources */,
+				1ACCDC691C3C57D600E39371 /* User.swift in Sources */,
+				FF02FE261C3D833E00549529 /* MessageExtension.swift in Sources */,
+				FFFF60711C431C4E000BC541 /* AlertExtension.swift in Sources */,
+				92D7E6441C3C58F30084E725 /* LocationController.swift in Sources */,
+				1ACCDC871C3C805000E39371 /* FriendController.swift in Sources */,
+				FFD55CA31C3B533F00454AD5 /* CompassViewController.swift in Sources */,
+				FFFF60751C434534000BC541 /* AnnotationExtension.swift in Sources */,
+				92F3B8E91C3F1080007A6DCE /* Swift Extensions.swift in Sources */,
+				92AC73DD1C3C871600A75814 /* ContactController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C4738691C3B3B4C000142C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C47386A1C3B3B4C000142C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8C47386E1C3B3B4C000142C3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C47386F1C3B3B4C000142C3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8C4738721C3B3B4C000142C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C4738731C3B3B4C000142C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8C4738751C3B3B4C000142C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Tether/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+<<<<<<< HEAD
+				PRODUCT_BUNDLE_IDENTIFIER = com.James.Tether;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.TetherLocation.Location;
+>>>>>>> 42b19cbdfc1002fbf9f008840d989a5ce0e24e94
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		8C4738761C3B3B4C000142C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Tether/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+<<<<<<< HEAD
+				PRODUCT_BUNDLE_IDENTIFIER = com.James.Tether;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.TetherLocation.Location;
+>>>>>>> 42b19cbdfc1002fbf9f008840d989a5ce0e24e94
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8C47385D1C3B3B4C000142C3 /* Build configuration list for PBXProject "Tether" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C4738721C3B3B4C000142C3 /* Debug */,
+				8C4738731C3B3B4C000142C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C4738741C3B3B4C000142C3 /* Build configuration list for PBXNativeTarget "Tether" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C4738751C3B3B4C000142C3 /* Debug */,
+				8C4738761C3B3B4C000142C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8C47385A1C3B3B4C000142C3 /* Project object */;
+}
